@@ -1,14 +1,15 @@
 body {
     font-family: "IBM Plex Mono", monospace;
     margin: 0;
-    border: 5px solid #8fa5ff;
     display: flex;
+    background: #F2EDE2;
+    color: #3D2B1F;
 }
 
 .sidebar {
-  width: 200px;
+  width: 220px;
   height: 100vh;
-  background: #f2ede2;
+  background: #E7B9B2;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -20,8 +21,13 @@ body {
 
 .sidebar a {
   text-decoration: none;
-  color: #333;
-  font-size: 1rem;
+  color: #3D2B1F;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.sidebar a:hover {
+  color: #C47A5C;
 }
 
 .content {
@@ -29,40 +35,64 @@ body {
   padding: 3rem;
 }
 
-ul{
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem
+h1 {
+  font-family: "Chewy", cursive;
+  font-size: 3rem;
+  color: #3D2B1F;
 }
 
-#stargazers-list li{
-    padding: 1rem;
-    border: 1px solid #8fa5ff;
-    font-size: 0.75rem;
-    height: 50px;
-    text-align: center;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.home-grid, ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+  max-width: 1000px;
 }
-.repo-name {
-  transition: font-size 0.3s ease;
-  font-weight: bold;
-  font-size: 1rem;
+
+.home-box, #stargazers-list li {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-box:hover, #stargazers-list li:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+}
+
+.home-box h3, .repo-name {
+  color: #C47A5C;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .repo-desc {
-  display: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: #6B5B4D;
 }
 
-.repo-desc.visible {
-  display: block;
+#stargazers-list li:hover .repo-desc {
+  opacity: 1;
+  max-height: 100px;
 }
 
-h1{
-  font-family:"chewy", cursive;
-  font-size: 4.5rem;
+.home-box a {
+  color: #C47A5C;
+  text-decoration: none;
+  font-weight: 700;
 }
