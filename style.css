@@ -1,15 +1,68 @@
 body {
-    font-family: sans-serif;
-    margin: 2rem;
+    font-family: "IBM Plex Mono", monospace;
+    margin: 0;
+    border: 5px solid #8fa5ff;
+    display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background: #f2ede2;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+.content {
+  margin-left: 220px;
+  padding: 3rem;
 }
 
 ul{
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem
 }
 
 #stargazers-list li{
-    padding: 2rem;
+    padding: 1rem;
     border: 1px solid #8fa5ff;
-    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    height: 50px;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.repo-name {
+  transition: font-size 0.3s ease;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.repo-desc {
+  display: none;
+}
+
+.repo-desc.visible {
+  display: block;
+}
+
+h1{
+  font-family:"chewy", cursive;
+  font-size: 4.5rem;
 }
