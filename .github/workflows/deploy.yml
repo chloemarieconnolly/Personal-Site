@@ -1,28 +1,29 @@
-name: Deploy to Github Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 
+    branches:
       - main
 
 permissions:
-  contents: read  
+  contents: read
   pages: write
   id-token: write
 
-  jobs:
-    deploy:
-      runs-on:ubuntu-latest
-      enviornment:
-        name: github-pages
-        url: ${{steps.deployment.outputs.page_url}}
-      steps:
-        -name: checkout
-        uses: actons/checkout@v6
-        -name: setup pages
-        uses: actions/upload-pages-artifact@v4
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v1
         with:
           path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v1
