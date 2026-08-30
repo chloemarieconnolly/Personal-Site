@@ -1,4 +1,4 @@
-const username = "chloemarieconnolly"; // your GitHub username
+const username = "chloemarieconnolly"; 
 
 fetch(`https://api.github.com/users/${username}/starred`)
   .then(response => response.json())

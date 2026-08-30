@@ -8,7 +8,8 @@ ul{
     padding: 0;
 }
 
-li{
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #ddd;
+#stargazers-list li{
+    padding: 2rem;
+    border: 1px solid #8fa5ff;
+    margin-bottom: 0.75rem;
 }
