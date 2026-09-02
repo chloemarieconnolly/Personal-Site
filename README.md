@@ -1,4 +1,3 @@
-Personal site built to practise and develop coding skills
 
 # Homepage
 
